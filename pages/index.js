@@ -1,11 +1,12 @@
 // pages/index.js
 import Link from "next/link";
 import { client } from "../libs/client";
+import styles from '../styles/Home.module.scss';
 
 export default function Home({ blog }) {
   return (
     <div>
-      <ul>
+      <ul className={styles.list}>
         {blog.map((blog) => (
           <li key={blog.id}>
             <Link href={`/blog/${blog.id}`}>{blog.title}</Link>
